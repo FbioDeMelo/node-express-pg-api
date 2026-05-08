@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuários</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Gerenciamento de Usuários</h1>
+
+  <!-- Criar usuário -->
+  <div class="card">
+    <h2>Adicionar usuário</h2>
+    <div class="form-row">
+      <input type="text"  id="name"  placeholder="Nome"  required>
+      <input type="email" id="email" placeholder="Email" required>
+      <button id="btn-adicionar" class="btn-primary" onclick="criarUsuario()">Adicionar</button>
+    </div>
+  </div>
+
+  <!-- Lista -->
+  <div class="card">
+    <h2>Usuários cadastrados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="corpo"></tbody>
+    </table>
+    <p id="info-paginacao" class="info-paginacao"></p>
+    <div id="paginacao"></div>
+  </div>
+
+  <!-- Modal de edição -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <h2>Editar usuário</h2>
+      <div class="form-col">
+        <input type="text"  id="edit-name"  placeholder="Nome"  required>
+        <input type="email" id="edit-email" placeholder="Email" required>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="fecharModal()">Cancelar</button>
+        <button id="btn-salvar" class="btn-primary" onclick="salvarEdicao()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
